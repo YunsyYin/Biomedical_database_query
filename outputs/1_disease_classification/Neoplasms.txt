@@ -1,0 +1,314 @@
+Dnode1
+	PT Disease Category
+	NT Dnode2
+	NT Dnode3
+	NT Dnode4
+	NT Dnode5
+	NT Dnode6
+	NT Dnode7
+	NT Dnode8
+Dnode2
+	PT Endocrine System Diseases
+	NT Dnode2a
+Dnode2a
+	PT Pituitary adenoma
+	SYN Pituitary Neoplasms
+	SYN Neoplasm, Pituitary
+	SYN Neoplasms, Pituitary
+	SYN Pituitary Neoplasm
+	SYN Pituitary Tumors
+	SYN Pituitary Tumor
+	SYN Tumor, Pituitary
+	SYN Tumors, Pituitary
+	SYN Pituitary Adenoma
+	SYN Adenoma, Pituitary
+	SYN Adenomas, Pituitary
+	SYN Pituitary Adenomas
+	SYN Pituitary Carcinoma
+	SYN Carcinoma, Pituitary
+	SYN Carcinomas, Pituitary
+	SYN Pituitary Carcinomas
+	SYN Cancer of the Pituitary
+	SYN Pituitary Cancer
+	SYN Cancer, Pituitary
+	SYN Cancers, Pituitary
+	SYN Cancer of Pituitary
+	SYN Pituitary Cancers
+Dnode3
+	PT Hemic and Lymphatic Diseases
+	NT Dnode3a
+	NT Dnode3b
+Dnode3a
+	PT Acute Lymphoblastic Leukemia
+	SYN Precursor Cell Lymphoblastic Leukemia-Lymphoma
+	SYN Precursor Cell Lymphoblastic Leukemia Lymphoma
+	SYN Leukemia, Acute Lymphoblastic
+	SYN Acute Lymphoblastic Leukemia
+	SYN Leukemia, Lymphoblastic
+	SYN Leukemia, Lymphoblastic, Acute
+	SYN Leukemia, Lymphocytic, Acute
+	SYN Lymphoblastic Leukemia
+	SYN Lymphoblastic Leukemia, Acute
+	SYN Lymphoblastic Lymphoma
+	SYN Lymphocytic Leukemia, Acute
+	SYN Acute Lymphocytic Leukemia
+	SYN Leukemia, Acute Lymphocytic
+	SYN Lymphoma, Lymphoblastic
+	SYN Acute Lymphoid Leukemia
+	SYN Leukemia, Acute Lymphoid
+	SYN Lymphoid Leukemia, Acute
+	SYN Leukemia, Lymphoid, Acute
+	SYN Leukemia, Lymphocytic, Acute, L1
+	SYN Lymphocytic Leukemia, L1
+	SYN L1 Lymphocytic Leukemia
+	SYN Leukemia, L1 Lymphocytic
+	SYN Lymphoblastic Leukemia, Acute, Childhood
+	SYN Lymphoblastic Leukemia, Acute, L1
+	SYN ALL, Childhood
+	SYN Childhood ALL
+	SYN Leukemia, Lymphoblastic, Acute, L1
+	SYN Leukemia, Lymphocytic, Acute, L2
+	SYN Lymphocytic Leukemia, L2
+	SYN L2 Lymphocytic Leukemia
+	SYN Leukemia, L2 Lymphocytic
+	SYN Lymphoblastic Leukemia, Acute, Adult
+	SYN Lymphoblastic Leukemia, Acute, L2
+	SYN Leukemia, Lymphoblastic, Acute, L2
+	SYN Leukemia, Lymphoblastic, Acute, Philadelphia-Positive
+Dnode3b
+	PT Hodgkin disease
+	SYN Hodgkin Disease
+	SYN Disease, Hodgkin
+	SYN Granuloma, Hodgkin's
+	SYN Hodgkin's Granuloma
+	SYN Granuloma, Hodgkins
+	SYN Hodgkins Granuloma
+	SYN Lymphogranuloma, Malignant
+	SYN Lymphogranulomas, Malignant
+	SYN Malignant Lymphogranuloma
+	SYN Malignant Lymphogranulomas
+	SYN Hodgkin Lymphoma
+	SYN Lymphoma, Hodgkin
+	SYN Hodgkin's Disease
+	SYN Disease, Hodgkin's
+	SYN Hodgkin's Lymphoma
+	SYN Hodgkins Lymphoma
+	SYN Lymphoma, Hodgkin's
+	SYN Hodgkins Disease
+	SYN Disease, Hodgkins
+	SYN Granuloma, Hodgkin
+	SYN Hodgkin Granuloma
+	SYN Granuloma, Malignant
+	SYN Malignant Granuloma
+	SYN Malignant Granulomas
+	SYN Nodular Lymphocyte-Predominant Hodgkin's Lymphoma
+	SYN Nodular Lymphocyte Predominant Hodgkin's Lymphoma
+	SYN Nodular Sclerosing Hodgkin's Lymphoma
+	SYN Lymphocyte-Rich Classical Hodgkin's Lymphoma
+	SYN Lymphocyte Rich Classical Hodgkin's Lymphoma
+	SYN Mixed Cellularity Hodgkin's Lymphoma
+	SYN Hodgkin Lymphoma, Adult
+	SYN Adult Hodgkin Lymphoma
+	SYN Lymphocyte Depletion Hodgkin's Lymphoma
+Dnode4
+	PT Nervous System Diseases
+	NT Dnode4a
+Dnode4a
+	PT Pituitary adenoma
+	SYN Pituitary Neoplasms
+	SYN Neoplasm, Pituitary
+	SYN Neoplasms, Pituitary
+	SYN Pituitary Neoplasm
+	SYN Pituitary Tumors
+	SYN Pituitary Tumor
+	SYN Tumor, Pituitary
+	SYN Tumors, Pituitary
+	SYN Pituitary Adenoma
+	SYN Adenoma, Pituitary
+	SYN Adenomas, Pituitary
+	SYN Pituitary Adenomas
+	SYN Pituitary Carcinoma
+	SYN Carcinoma, Pituitary
+	SYN Carcinomas, Pituitary
+	SYN Pituitary Carcinomas
+	SYN Cancer of the Pituitary
+	SYN Pituitary Cancer
+	SYN Cancer, Pituitary
+	SYN Cancers, Pituitary
+	SYN Cancer of Pituitary
+	SYN Pituitary Cancers
+Dnode5
+	PT Respiratory Tract Diseases
+	NT Dnode5a
+Dnode5a
+	PT NSCLC
+	SYN Carcinoma, Non-Small-Cell Lung
+	SYN Carcinoma, Non Small Cell Lung
+	SYN Carcinomas, Non-Small-Cell Lung
+	SYN Lung Carcinoma, Non-Small-Cell
+	SYN Lung Carcinomas, Non-Small-Cell
+	SYN Non-Small-Cell Lung Carcinomas
+	SYN Non-Small Cell Lung Carcinoma
+	SYN Non-Small-Cell Lung Carcinoma
+	SYN Non Small Cell Lung Carcinoma
+	SYN Nonsmall Cell Lung Cancer
+	SYN Carcinoma, Non-Small Cell Lung
+	SYN Non-Small Cell Lung Cancer
+Dnode6
+	PT Urogenital Diseases
+	NT Dnode6a
+Dnode6a
+	PT Cancer of the bladder
+	SYN Urinary Bladder Neoplasms
+	SYN Neoplasm, Urinary Bladder
+	SYN Urinary Bladder Neoplasm
+	SYN Bladder Tumors
+	SYN Bladder Tumor
+	SYN Tumor, Bladder
+	SYN Tumors, Bladder
+	SYN Neoplasms, Bladder
+	SYN Bladder Neoplasms
+	SYN Bladder Neoplasm
+	SYN Neoplasm, Bladder
+	SYN Urinary Bladder Cancer
+	SYN Cancer, Urinary Bladder
+	SYN Malignant Tumor of Urinary Bladder
+	SYN Cancer of the Bladder
+	SYN Bladder Cancer
+	SYN Bladder Cancers
+	SYN Cancer, Bladder
+	SYN Cancer of Bladder
+Dnode7
+	PT Immune System Diseases
+	NT Dnode7a
+	NT Dnode7b
+Dnode7a
+	PT Acute Lymphoblastic Leukemia
+	SYN Precursor Cell Lymphoblastic Leukemia-Lymphoma
+	SYN Precursor Cell Lymphoblastic Leukemia Lymphoma
+	SYN Leukemia, Acute Lymphoblastic
+	SYN Acute Lymphoblastic Leukemia
+	SYN Leukemia, Lymphoblastic
+	SYN Leukemia, Lymphoblastic, Acute
+	SYN Leukemia, Lymphocytic, Acute
+	SYN Lymphoblastic Leukemia
+	SYN Lymphoblastic Leukemia, Acute
+	SYN Lymphoblastic Lymphoma
+	SYN Lymphocytic Leukemia, Acute
+	SYN Acute Lymphocytic Leukemia
+	SYN Leukemia, Acute Lymphocytic
+	SYN Lymphoma, Lymphoblastic
+	SYN Acute Lymphoid Leukemia
+	SYN Leukemia, Acute Lymphoid
+	SYN Lymphoid Leukemia, Acute
+	SYN Leukemia, Lymphoid, Acute
+	SYN Leukemia, Lymphocytic, Acute, L1
+	SYN Lymphocytic Leukemia, L1
+	SYN L1 Lymphocytic Leukemia
+	SYN Leukemia, L1 Lymphocytic
+	SYN Lymphoblastic Leukemia, Acute, Childhood
+	SYN Lymphoblastic Leukemia, Acute, L1
+	SYN ALL, Childhood
+	SYN Childhood ALL
+	SYN Leukemia, Lymphoblastic, Acute, L1
+	SYN Leukemia, Lymphocytic, Acute, L2
+	SYN Lymphocytic Leukemia, L2
+	SYN L2 Lymphocytic Leukemia
+	SYN Leukemia, L2 Lymphocytic
+	SYN Lymphoblastic Leukemia, Acute, Adult
+	SYN Lymphoblastic Leukemia, Acute, L2
+	SYN Leukemia, Lymphoblastic, Acute, L2
+	SYN Leukemia, Lymphoblastic, Acute, Philadelphia-Positive
+Dnode7b
+	PT Hodgkin disease
+	SYN Hodgkin Disease
+	SYN Disease, Hodgkin
+	SYN Granuloma, Hodgkin's
+	SYN Hodgkin's Granuloma
+	SYN Granuloma, Hodgkins
+	SYN Hodgkins Granuloma
+	SYN Lymphogranuloma, Malignant
+	SYN Lymphogranulomas, Malignant
+	SYN Malignant Lymphogranuloma
+	SYN Malignant Lymphogranulomas
+	SYN Hodgkin Lymphoma
+	SYN Lymphoma, Hodgkin
+	SYN Hodgkin's Disease
+	SYN Disease, Hodgkin's
+	SYN Hodgkin's Lymphoma
+	SYN Hodgkins Lymphoma
+	SYN Lymphoma, Hodgkin's
+	SYN Hodgkins Disease
+	SYN Disease, Hodgkins
+	SYN Granuloma, Hodgkin
+	SYN Hodgkin Granuloma
+	SYN Granuloma, Malignant
+	SYN Malignant Granuloma
+	SYN Malignant Granulomas
+	SYN Nodular Lymphocyte-Predominant Hodgkin's Lymphoma
+	SYN Nodular Lymphocyte Predominant Hodgkin's Lymphoma
+	SYN Nodular Sclerosing Hodgkin's Lymphoma
+	SYN Lymphocyte-Rich Classical Hodgkin's Lymphoma
+	SYN Lymphocyte Rich Classical Hodgkin's Lymphoma
+	SYN Mixed Cellularity Hodgkin's Lymphoma
+	SYN Hodgkin Lymphoma, Adult
+	SYN Adult Hodgkin Lymphoma
+	SYN Lymphocyte Depletion Hodgkin's Lymphoma
+Dnode8
+	PT Digestive System Diseases
+	NT Dnode8a
+	NT Dnode8b
+	NT Dnode8c
+Dnode8a
+	PT Duodenal cancer
+	SYN Duodenal Neoplasms
+	SYN Duodenal Neoplasm
+	SYN Neoplasm, Duodenal
+	SYN Neoplasms, Duodenal
+	SYN Duodenal Cancer
+	SYN Cancer, Duodenal
+	SYN Cancer of Duodenum
+	SYN Duodenum Cancer
+	SYN Cancer of the Duodenum
+Dnode8b
+	PT Gastric cancer
+	SYN Stomach Neoplasms
+	SYN Neoplasm, Stomach
+	SYN Stomach Neoplasm
+	SYN Neoplasms, Stomach
+	SYN Gastric Neoplasms
+	SYN Gastric Neoplasm
+	SYN Neoplasm, Gastric
+	SYN Neoplasms, Gastric
+	SYN Cancer of Stomach
+	SYN Stomach Cancers
+	SYN Gastric Cancer
+	SYN Cancer, Gastric
+	SYN Cancers, Gastric
+	SYN Gastric Cancers
+	SYN Stomach Cancer
+	SYN Cancer, Stomach
+	SYN Cancers, Stomach
+	SYN Cancer of the Stomach
+	SYN Gastric Cancer, Familial Diffuse
+Dnode8c
+	PT Hepatocellular carcinoma
+	SYN Carcinoma, Hepatocellular
+	SYN Carcinomas, Hepatocellular
+	SYN Hepatocellular Carcinomas
+	SYN Liver Cell Carcinoma, Adult
+	SYN Liver Cancer, Adult
+	SYN Adult Liver Cancer
+	SYN Adult Liver Cancers
+	SYN Cancer, Adult Liver
+	SYN Cancers, Adult Liver
+	SYN Liver Cancers, Adult
+	SYN Liver Cell Carcinoma
+	SYN Carcinoma, Liver Cell
+	SYN Carcinomas, Liver Cell
+	SYN Cell Carcinoma, Liver
+	SYN Cell Carcinomas, Liver
+	SYN Liver Cell Carcinomas
+	SYN Hepatocellular Carcinoma
+	SYN Hepatoma
+	SYN Hepatomas
