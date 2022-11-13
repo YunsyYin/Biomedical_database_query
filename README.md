@@ -6,6 +6,6 @@ This repo covers:
 3. Plot temporal trends in the number of Medline publications by disease
 
 
+
 #### Resources ####
-Download MeSH Database from [here](https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2022.xml) to the mesh_data folder.
-Download MeSH Trees from [here](https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/meshtrees/) to the mesh_data folder.
+Download [MeSH Database](https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2022.xml) and [MeSH Trees](https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/meshtrees/) to the mesh_data folder.
