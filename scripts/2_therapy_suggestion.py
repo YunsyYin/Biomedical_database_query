@@ -69,7 +69,7 @@ def search_pubmed(mesh_terms):
 
 
 def tabulate_pubmed_result(query_result, drug_therapy):
-    '''Process and tabulate PubMed results, and output CSV files for each disease'''
+    '''Process and tabulate medication summary and references as CSV files'''
 
     mesh_terms_dict = {v['heading']:k for k,v in query_result.items()}
     table_column = ['MeSH Term', 'Year of Publication', 'Medication', 'Details', 'PMID', 'PubMed Link']
@@ -114,7 +114,7 @@ def tabulate_pubmed_result(query_result, drug_therapy):
             summary_frame = pd.DataFrame([[k, year_range, medication_sum, '', '', '']], columns=table_column)
             table = pd.concat([summary_frame, table_frame])
 
-            with io.open(f'../outputs/2_therapy_suggestion/{number}_{k}.csv', 'w', encoding='utf-8') as output:
+            with io.open(f'../outputs/2_therapy_suggestion/{number}_ref_{k}.csv', 'w', encoding='utf-8') as output:
                 table.to_csv(output)
 
             row_sum = pd.DataFrame([[mesh_terms_dict[k], k, medication_sum,', '.join(str(x) for x in pmid_list)]], columns=summary_table_column)
@@ -135,6 +135,11 @@ if __name__ == "__main__":
         file.close()
     
     mesh_terms = get_mesh_term(query_result)
-    drug_therapy = search_pubmed(mesh_terms)
+
+    # drug_therapy = search_pubmed(mesh_terms)
+
+    with open('../outputs/0_query_results/drug_therapy_from_pubmed.txt') as file:
+        drug_therapy = json.loads(file.read())
+        file.close()
 
     tabulate_pubmed_result(query_result, drug_therapy)
