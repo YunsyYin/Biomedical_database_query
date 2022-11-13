@@ -5,6 +5,7 @@ from Bio import Entrez
 
 
 def get_mesh_term(query_result):
+    '''Output MeSH terms as a list from given MeSH query results'''
     mesh_terms = []
     for k, v in query_result.items():
         mesh_terms.append(v['heading'])
@@ -12,9 +13,9 @@ def get_mesh_term(query_result):
 
 
 def get_year_count_from_medline(mesh_terms):
+    '''Query PubMed by MeSH terms and retrieve publication count per year'''
 
     year_count_dict = {}
-
     for term in mesh_terms:
         print(f'|| Retrieving year count of {term} from PubMed...')
         year_start = 1900
@@ -26,7 +27,6 @@ def get_year_count_from_medline(mesh_terms):
             handle = Entrez.esearch(db='pubmed', term=query)
             record = Entrez.read(handle)
             year_count[str(year)] = record['Count']
-        
         year_count_dict[term] = year_count
 
     with open('../outputs/0_query_results/publication_year_count.txt', 'a') as file:
@@ -37,6 +37,8 @@ def get_year_count_from_medline(mesh_terms):
 
     
 def plot_publication_trend(year_count_dict):
+    '''Plot line graph of number of publication per year'''
+
     plt.figure(figsize=(20,10))
 
     for k, v in year_count_dict.items():
@@ -59,16 +61,16 @@ def plot_publication_trend(year_count_dict):
 
 if __name__ == "__main__":
 
-    # with open('../outputs/0_query_results/mesh_query_result.txt') as file:
-    #     query_result = json.loads(file.read())
-    #     file.close()
-    
-    # mesh_terms = get_mesh_term(query_result)
-    # year_count_dict = get_year_count_from_medline(mesh_terms)
-
-    with open('../outputs/0_query_results/publication_year_count.txt') as file:
-        year_count_dict = json.loads(file.read())
+    with open('../outputs/0_query_results/mesh_query_result.txt') as file:
+        query_result = json.loads(file.read())
         file.close()
+    
+    mesh_terms = get_mesh_term(query_result)
+    year_count_dict = get_year_count_from_medline(mesh_terms)
+
+    # with open('../outputs/0_query_results/publication_year_count.txt') as file:
+    #     year_count_dict = json.loads(file.read())
+    #     file.close()
 
     plot_publication_trend(year_count_dict)
 

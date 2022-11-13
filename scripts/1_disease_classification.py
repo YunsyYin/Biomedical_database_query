@@ -3,20 +3,17 @@ import xml.etree.ElementTree as ET
 
 
 def query_mesh(disease_list):
-    '''Search MeSH database with the given disease name and return a dict containing MeSH id, heading, synonyms and category'''
+    '''Search MeSH database with given disease name and return a dict containing MeSH id, heading, synonyms and category'''
 
     query_result = {}
-    
+
     for disease_name in disease_list:
-
         print(f'|| Searching MeSH database by {disease_name}...')
-
         mesh_dict = {'id': str(), 
                      'heading': str(),
                      'synonyms': list(),
                      'category_code': list(),
                      'category': list()}
-
         disease_found = False
         tree = ET.parse('../mesh_data/desc2022.xml')
 
@@ -44,7 +41,6 @@ def query_mesh(disease_list):
             mesh_dict['category_code'] = list(mesh_dict['category_code'])
         else:
             print(f'Disease not found in MeSH queries: {disease_name}')
-
         query_result[disease_name] = mesh_dict
 
     with open('../outputs/0_query_results/mesh_query_result.txt', 'a') as file:
@@ -56,12 +52,13 @@ def query_mesh(disease_list):
 
 def output_thesaurus_format(query_result, output_file_name):
     '''Divide MeSH search results by organ system and output them in thesaurus format'''
+
     categories = set()
     for k, v in query_result.items():
         for category in v['category']:
             categories.add(category)
     categories.remove(output_file_name)
-    categories = list(categories)
+    categories = sorted(list(categories))
 
     thesaurus_dict = {'Dnode1': {'PT': 'Disease Category', 'NT': list()}}
     for i in range(len(categories)):
@@ -112,6 +109,11 @@ if __name__ == "__main__":
                     'Pituitary adenoma']
 
     query_result = query_mesh(disease_list)
+
+    # with open('../outputs/0_query_results/mesh_query_result.txt') as file:
+    #     query_result = json.loads(file.read())
+    #     file.close()
+
     output_file_name = 'Neoplasms'
     output_thesaurus_format(query_result, output_file_name)
     

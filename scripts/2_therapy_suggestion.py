@@ -4,6 +4,7 @@ from Bio import Entrez
 
 
 def get_mesh_term(query_result):
+    '''Output MeSH terms as a list from given MeSH query results'''
     mesh_terms = []
     for k, v in query_result.items():
         mesh_terms.append(v['heading'])
@@ -11,9 +12,9 @@ def get_mesh_term(query_result):
 
 
 def search_pubmed(mesh_terms):
+    '''Query PubMed by MeSH terms and retrieve articles with MeSH drug therapy tags'''
 
     retrieved_results = {}
-
     for term in mesh_terms:
         print(f'|| Retrieving drug therapy for {term} from PubMed...')
         retrieved_list = []
@@ -53,10 +54,7 @@ def search_pubmed(mesh_terms):
                                or text.attributes['Label'].lower() == 'findings' \
                                or text.attributes['Label'].lower() == 'recent findings' \
                                or text.attributes['Label'].lower() == 'interpretation' \
-                               or text.attributes['Label'].lower() == 'expert opinion' \
-                               or text.attributes['Label'].lower() == 'what is new and conclusion' \
-                               or text.attributes['Label'].lower() == 'what do the results of the study mean?' \
-                               or text.attributes['Label'].lower() == 'key scientific concepts of review':
+                               or text.attributes['Label'].lower() == 'expert opinion':
                                 retrieved_result['summary'] = str(text)
                     retrieved_list.append(retrieved_result)
             except KeyError:
@@ -70,8 +68,13 @@ def search_pubmed(mesh_terms):
     return retrieved_results
 
 
-def tabulate_pubmed_result(drug_therapy):
-    table_column = ['Disease', 'Year of Publication', 'Medication', 'Details', 'PMID', 'PubMed Link']
+def tabulate_pubmed_result(query_result, drug_therapy):
+    '''Process and tabulate PubMed results, and output CSV files for each disease'''
+
+    mesh_terms_dict = {v['heading']:k for k,v in query_result.items()}
+    table_column = ['MeSH Term', 'Year of Publication', 'Medication', 'Details', 'PMID', 'PubMed Link']
+    summary_table_column = ['Disease Name', 'MeSH Term', 'Medication', 'PMID of Reference']
+    summary_table_list = []
     number = 0
     for k, v in drug_therapy.items():
         print(f'|| Processing and tabulating PubMed results for {k}...')
@@ -90,11 +93,13 @@ def tabulate_pubmed_result(drug_therapy):
                     del substance_count[sub]
 
         table_list = []
+        pmid_list = []
         for article in v:
             for substance in article['substances']:
                 if substance in substance_count.keys() and len(article['summary']) != 0:
                     year = article['year']
                     pmid = article['pmid']
+                    pmid_list.append(pmid)
                     medication = ', '.join(str(x) for x in article['substances'])
                     details = article['summary']
                     pubmed_link = f'https://pubmed.ncbi.nlm.nih.gov/{pmid}/'
@@ -109,25 +114,27 @@ def tabulate_pubmed_result(drug_therapy):
             summary_frame = pd.DataFrame([[k, year_range, medication_sum, '', '', '']], columns=table_column)
             table = pd.concat([summary_frame, table_frame])
 
-            with io.open(f'../outputs/2_drug_recommendation/{number}_{k}.csv', 'w', encoding='utf-8') as output:
+            with io.open(f'../outputs/2_therapy_suggestion/{number}_{k}.csv', 'w', encoding='utf-8') as output:
                 table.to_csv(output)
 
+            row_sum = pd.DataFrame([[mesh_terms_dict[k], k, medication_sum,', '.join(str(x) for x in pmid_list)]], columns=summary_table_column)
+            summary_table_list.append(row_sum)
         else:
             print(f'No eligible medication was found for {k}.')
+    
+    summary_table = pd.concat(summary_table_list)  
+    with io.open(f'../outputs/2_therapy_suggestion/medication_suggestion_summary.csv', 'w', encoding='utf-8') as output:
+        summary_table.to_csv(output)
 
 
 
 if __name__ == "__main__":
 
-    # with open('../outputs/0_query_results/mesh_query_result.txt') as file:
-    #     query_result = json.loads(file.read())
-    #     file.close()
-    
-    # mesh_terms = get_mesh_term(query_result)
-    # drug_therapy = search_pubmed(mesh_terms)
-
-    with open('../outputs/0_query_results/drug_therapy_from_pubmed.txt') as file:
-        drug_therapy = json.loads(file.read())
+    with open('../outputs/0_query_results/mesh_query_result.txt') as file:
+        query_result = json.loads(file.read())
         file.close()
+    
+    mesh_terms = get_mesh_term(query_result)
+    drug_therapy = search_pubmed(mesh_terms)
 
-    tabulate_pubmed_result(drug_therapy)
+    tabulate_pubmed_result(query_result, drug_therapy)
