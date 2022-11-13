@@ -1,2 +1,5 @@
 # Environment
 .venv
+
+# Database
+mesh_data

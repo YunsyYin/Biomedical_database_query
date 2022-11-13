@@ -23,7 +23,7 @@ def get_year_count_from_medline(mesh_terms):
         for year in range(year_start, year_end):
             query = f'({term}[MeSH Terms]) AND ((medline[Filter]) AND ({year}/1/1:{year}/12/31[pdat]))'
             Entrez.email = 'yun-tzu.yin.21@ucl.ac.uk'
-            handle = Entrez.esearch(db="pubmed", term=query)
+            handle = Entrez.esearch(db='pubmed', term=query)
             record = Entrez.read(handle)
             year_count[str(year)] = record['Count']
         
