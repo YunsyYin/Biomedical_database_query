@@ -54,19 +54,27 @@ def output_thesaurus_format(query_result, output_file_name):
     '''Divide MeSH search results by organ system and output them in thesaurus format'''
 
     categories = set()
+    others = []
     for k, v in query_result.items():
-        for category in v['category']:
-            categories.add(category)
+        if len(set(v['category'])) == 1:
+            others.append(k)
+        else:
+            for category in v['category']:
+                categories.add(category)
     categories.remove(output_file_name)
     categories = sorted(list(categories))
 
     thesaurus_dict = {'Dnode1': {'PT': 'Disease Category', 'NT': list()}}
-    for i in range(len(categories)):
+    for i in range(len(categories)+1):
         thesaurus_dict['Dnode1']['NT'].append(f'Dnode{i+2}')
-        thesaurus_dict[f'Dnode{i+2}'] = {'PT': categories[i], 'NT': list(), 'Child_Dnode': dict()}
+        if i < len(categories):
+            pt_name = categories[i]
+        else: 
+            pt_name = 'Others'
+        thesaurus_dict[f'Dnode{i+2}'] = {'PT': pt_name, 'NT': list(), 'Child_Dnode': dict()}
 
         for k, v in query_result.items():
-            if categories[i] in v['category']:
+            if (i < len(categories) and categories[i] in v['category']) or (i == len(categories) and k in others):
                 char = chr(97 + len(thesaurus_dict[f'Dnode{i+2}']['NT']))
                 thesaurus_dict[f'Dnode{i+2}']['NT'].append(f'Dnode{i+2}{char}')
                 thesaurus_dict[f'Dnode{i+2}']['Child_Dnode'][f'Dnode{i+2}{char}'] = {'PT': k, 'SYN': list()}
@@ -97,22 +105,22 @@ def output_thesaurus_format(query_result, output_file_name):
 
 if __name__ == "__main__":
 
-    disease_list = ['Acute Lymphoblastic Leukemia',
-                    'Cancer of the bladder',
-                    'Duodenal cancer',
-                    'Gastric cancer',
-                    'Hemangioblastoma',
-                    'Hepatocellular carcinoma',
-                    'Hodgkin disease',
-                    'Melanoma',
-                    'NSCLC',
-                    'Pituitary adenoma']
+    # disease_list = ['Acute Lymphoblastic Leukemia',
+    #                 'Cancer of the bladder',
+    #                 'Duodenal cancer',
+    #                 'Gastric cancer',
+    #                 'Hemangioblastoma',
+    #                 'Hepatocellular carcinoma',
+    #                 'Hodgkin disease',
+    #                 'Melanoma',
+    #                 'NSCLC',
+    #                 'Pituitary adenoma']
 
-    query_result = query_mesh(disease_list)
+    # query_result = query_mesh(disease_list)
 
-    # with open('../outputs/0_query_results/mesh_query_result.txt') as file:
-    #     query_result = json.loads(file.read())
-    #     file.close()
+    with open('../outputs/0_query_results/mesh_query_result.txt') as file:
+        query_result = json.loads(file.read())
+        file.close()
 
     output_file_name = 'Neoplasms'
     output_thesaurus_format(query_result, output_file_name)
