@@ -7,6 +7,7 @@ Dnode1
 	NT Dnode6
 	NT Dnode7
 	NT Dnode8
+	NT Dnode9
 Dnode2
 	PT Digestive System Diseases
 	NT Dnode2a
@@ -312,3 +313,23 @@ Dnode8a
 	SYN Bladder Cancers
 	SYN Cancer, Bladder
 	SYN Cancer of Bladder
+Dnode9
+	PT Others
+	NT Dnode9a
+	NT Dnode9b
+Dnode9a
+	PT Hemangioblastoma
+	SYN Hemangioblastoma
+	SYN Hemangioblastomas
+	SYN Multiple Hemangioblastomas
+	SYN Hemangioblastoma, Multiple
+	SYN Hemangioblastomas, Multiple
+	SYN Multiple Hemangioblastoma
+Dnode9b
+	PT Melanoma
+	SYN Melanoma
+	SYN Melanomas
+	SYN Malignant Melanoma
+	SYN Malignant Melanomas
+	SYN Melanoma, Malignant
+	SYN Melanomas, Malignant

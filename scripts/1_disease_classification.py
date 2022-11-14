@@ -105,22 +105,22 @@ def output_thesaurus_format(query_result, output_file_name):
 
 if __name__ == "__main__":
 
-    # disease_list = ['Acute Lymphoblastic Leukemia',
-    #                 'Cancer of the bladder',
-    #                 'Duodenal cancer',
-    #                 'Gastric cancer',
-    #                 'Hemangioblastoma',
-    #                 'Hepatocellular carcinoma',
-    #                 'Hodgkin disease',
-    #                 'Melanoma',
-    #                 'NSCLC',
-    #                 'Pituitary adenoma']
+    disease_list = ['Acute Lymphoblastic Leukemia',
+                    'Cancer of the bladder',
+                    'Duodenal cancer',
+                    'Gastric cancer',
+                    'Hemangioblastoma',
+                    'Hepatocellular carcinoma',
+                    'Hodgkin disease',
+                    'Melanoma',
+                    'NSCLC',
+                    'Pituitary adenoma']
 
-    # query_result = query_mesh(disease_list)
+    query_result = query_mesh(disease_list)
 
-    with open('../outputs/0_query_results/mesh_query_result.txt') as file:
-        query_result = json.loads(file.read())
-        file.close()
+    # with open('../outputs/0_query_results/mesh_query_result.txt') as file:
+    #     query_result = json.loads(file.read())
+    #     file.close()
 
     output_file_name = 'Neoplasms'
     output_thesaurus_format(query_result, output_file_name)
